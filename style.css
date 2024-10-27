@@ -13,6 +13,10 @@ body {
   background: #a3d65c;
 }
 
+span {
+  font-size: 2rem;
+}
+
 .racetrack {
   position: relative;
   width: 24vmin;
@@ -36,6 +40,7 @@ body {
 }
 
 .racecar {
+  user-select: none;
   -webkit-transform-origin: 500% 50%;
   transform-origin: 500% 50%;
   height: 7vmin;
@@ -56,9 +61,18 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes lap {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+label {
+  cursor: pointer;
+}
+
+:checked ~ .racetrack .racecar {
+  animation-play-state: paused;
 }
